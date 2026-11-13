@@ -10,7 +10,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Haii Love!'))),
+      home: Scaffold(body: Center(child: Text('Hello, everyone!\nI am Michelle Ann L. Basco from INF241.\n What a flutter !!'))),
     );
   }
 }

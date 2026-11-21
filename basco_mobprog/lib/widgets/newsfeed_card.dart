@@ -78,7 +78,7 @@ class NewsFeedCard extends StatelessWidget {
             SizedBox(height: ScreenUtil().setHeight(5)),
             if (hasImage)
               Image.asset(
-                'assets/assets/images/catmeme.png',
+                'assets/images/catmeme.png',
                 width: double.infinity,
                 height: ScreenUtil().setHeight(300),
                 fit: BoxFit.cover,

@@ -12,3 +12,7 @@ The primary challenges I have encountered while setting up my Flutter developmen
 
 Reflection
 - As I have finished the laboratory and looking up through the experience I had, I have learned that majority of my problems revolved around misunderstanding the instructions. Therefore, I have reflected on the best practices that I should adopt in future tasks is to take note on my successful prompts and also take note on the errors I have encountered.
+
+Laboratory 1: Discussion
+-
+

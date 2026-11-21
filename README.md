@@ -16,3 +16,10 @@ Reflection
 Laboratory 1: Discussion
 -
 
+During this laboratory, I have learned to create an interface with images like FaceBook. Dart is a new language for me and I have learned a lot by its simplicity. However, there are circumstances I encountered along the way, which are the following:
+- Android Studio: I could not download my Android studio, in which I could not use the emulator or the chrome as well since there was an error with utilizing the website. So, I decided to use my phone for it. With this, I discovered the real problem of my device, which is the Gradle for Java running in the background. I have disabled the extension then there were still errors. After asking AI for solutions, it said I should download the upgraded version instead. It took a lot of tries. Finally, it worked.
+- SDK: There are a lot of upgrades, it took too long that I cannot do it properly due to using mobile data only. 
+- Transferring from another PC to Personal Laptop: There are a lot to download and to update as well to progress.
+
+Reflection:
+- I am sorry for submitting beyond the deadline despite the opportunity of it as the deadline was moved. However, there were a lot of errors with transferring devices that I did not account to. I did not do it ahead of time because I anticipated there could be problems when transferring and decided to use the computers in our laboratory but not this worse :<. I will be responsible for my late submission. Also, I have learned to use my laptop instead onwards to lessen further problems.

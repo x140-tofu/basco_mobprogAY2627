@@ -9,6 +9,7 @@ class NewsFeedCard extends StatelessWidget {
   final String date;
   final int numOfLikes;
   final bool hasImage;
+  final String profilePic;
   const NewsFeedCard({
     super.key,
     required this.userName,
@@ -16,6 +17,7 @@ class NewsFeedCard extends StatelessWidget {
     this.numOfLikes = 0,
     this.hasImage = false,
     required this.date,
+    required this.profilePic,
   });
 
   @override
@@ -30,7 +32,10 @@ class NewsFeedCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(Icons.person),
+                CircleAvatar(
+                  radius: 20,
+                  backgroundImage: AssetImage(profilePic),
+                ),
                 SizedBox(
                   width: ScreenUtil().setWidth(10),
                 ),
@@ -91,8 +96,8 @@ class NewsFeedCard extends StatelessWidget {
                         print('Liked');
                       },
                       icon: const Icon(
-                        Icons.thumb_up,
-                        color: FB_DARK_PRIMARY,
+                        Icons.favorite,
+                        color: FB_HEART,
                       ),
                       label: CustomText(
                         text: numOfLikes.toString(),
@@ -103,7 +108,7 @@ class NewsFeedCard extends StatelessWidget {
                     TextButton.icon(
                       onPressed:() {},
                       icon: const Icon(
-                        Icons.comment,
+                        Icons.chat_bubble_outline,
                         color: FB_DARK_PRIMARY,
                       ),
                       label: CustomText(

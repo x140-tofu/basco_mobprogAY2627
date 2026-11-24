@@ -14,6 +14,7 @@ class NewsFeedScreen extends StatelessWidget {
           numOfLikes: 1000,
           date: 'November 19, 2026',
           profilePic: 'assets/images/xiao.jpg',
+          currentUserProfilePic: 'assets/images/userProfile.jpg',
         ),
         NewsFeedCard(
           userName: 'Arataki Itto',
@@ -22,6 +23,7 @@ class NewsFeedScreen extends StatelessWidget {
           hasImage: true,
           date: 'November 20, 2026',
           profilePic: 'assets/images/itto.jpg',
+          currentUserProfilePic: 'assets/images/userProfile.jpg',
         ),
       ],
     );

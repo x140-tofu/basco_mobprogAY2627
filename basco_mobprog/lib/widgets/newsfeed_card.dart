@@ -10,6 +10,7 @@ class NewsFeedCard extends StatelessWidget {
   final int numOfLikes;
   final bool hasImage;
   final String profilePic;
+  final String currentUserProfilePic;
   const NewsFeedCard({
     super.key,
     required this.userName,
@@ -18,6 +19,7 @@ class NewsFeedCard extends StatelessWidget {
     this.hasImage = false,
     required this.date,
     required this.profilePic,
+    required this.currentUserProfilePic,
   });
 
   @override
@@ -134,9 +136,9 @@ class NewsFeedCard extends StatelessWidget {
 
                 Row(
                   children: [
-                    Icon(Icons.person),
-                    SizedBox(
-                      width: ScreenUtil().setWidth(10),
+                    CircleAvatar(
+                      radius: 13,
+                      backgroundImage: AssetImage(currentUserProfilePic),
                     ),
                     Container(
                       padding: EdgeInsets.fromLTRB(ScreenUtil().setSp(10), 0, 0, 0),

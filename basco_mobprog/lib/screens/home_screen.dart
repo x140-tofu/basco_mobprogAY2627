@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constants.dart';
 import '../screens/newsfeed_screen.dart';
 import '../widgets/custom_text.dart';
+import '../screens/notification_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,13 +25,16 @@ class _HomeScreenState extends State<HomeScreen> {
         title: CustomText(
           text: 'facebook',
           fontSize: ScreenUtil().setSp(25),
-          color:FB_PRIMARY,
+          color: FB_PRIMARY,
           fontFamily: 'Klavika',
         ),
       ),
       body: PageView(
         controller: _pageController,
-        children: const <Widget>[NewsFeedScreen()],
+        children: const <Widget>[
+          NewsFeedScreen(),
+          NotificationScreen(),
+        ],
         onPageChanged: (page) {
           setState(() {
             _selectedIndex = page;
@@ -41,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         onTap: _onTappedBar,
-
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(

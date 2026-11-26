@@ -11,6 +11,7 @@ class NewsFeedCard extends StatelessWidget {
   final bool hasImage;
   final String profilePic;
   final String currentUserProfilePic;
+
   const NewsFeedCard({
     super.key,
     required this.userName,
@@ -71,11 +72,10 @@ class NewsFeedCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                Spacer(),
-                Icon(Icons.more_horiz),
+                const Spacer(),
+                const Icon(Icons.more_horiz),
               ],
             ),
-
             SizedBox(height: ScreenUtil().setHeight(5)),
             CustomText(
               text: postContent,
@@ -90,81 +90,87 @@ class NewsFeedCard extends StatelessWidget {
                 height: ScreenUtil().setHeight(300),
                 fit: BoxFit.cover,
               ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextButton.icon(
-                      onPressed: () {
-                        print('Liked');
-                      },
-                      icon: const Icon(
-                        Icons.favorite,
-                        color: FB_HEART,
-                      ),
-                      label: CustomText(
-                        text: numOfLikes.toString(),
-                        fontSize: ScreenUtil().setSp(12),
-                        color: FB_DARK_PRIMARY,
-                      ),
-                    ),
-                    TextButton.icon(
-                      onPressed:() {},
-                      icon: const Icon(
-                        Icons.chat_bubble_outline,
-                        color: FB_DARK_PRIMARY,
-                      ),
-                      label: CustomText(
-                        text: 'Comment',
-                        fontSize: ScreenUtil().setSp(12),
-                        color: FB_DARK_PRIMARY,
-                      ),
-                    ),
-                    TextButton.icon(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.redo,
-                        color: FB_DARK_PRIMARY,
-                      ),
-                      label: CustomText(
-                        text: 'Share',
-                        fontSize: ScreenUtil().setSp(12),
-                        color: FB_DARK_PRIMARY,
-                      ),
-                    ),
-                  ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton.icon(
+                  onPressed: () {
+                    print('Liked');
+                  },
+                  icon: const Icon(
+                    Icons.favorite,
+                    color: FB_HEART,
+                  ),
+                  label: CustomText(
+                    text: numOfLikes.toString(),
+                    fontSize: ScreenUtil().setSp(12),
+                    color: FB_DARK_PRIMARY,
+                  ),
                 ),
-
-                Row(
-                  children: [
-                    CircleAvatar(
-                      radius: 13,
-                      backgroundImage: AssetImage(currentUserProfilePic),
-                    ),
-                    Container(
-                      padding: EdgeInsets.fromLTRB(ScreenUtil().setSp(10), 0, 0, 0),
-                      alignment: Alignment.centerLeft,
-                      height: ScreenUtil().setHeight(25),
-                      width: ScreenUtil().setWidth(330),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(ScreenUtil().setSp(10))),
-                      ),
-                      child: CustomText(
-                        text: 'Write a comment...',
-                        fontSize: ScreenUtil().setSp(11),
-                        color: Colors.grey),
-                    ),
-                  ],
+                TextButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.chat_bubble_outline,
+                    color: FB_DARK_PRIMARY,
+                  ),
+                  label: CustomText(
+                    text: 'Comment',
+                    fontSize: ScreenUtil().setSp(12),
+                    color: FB_DARK_PRIMARY,
+                  ),
+                ),
+                TextButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.redo,
+                    color: FB_DARK_PRIMARY,
+                  ),
+                  label: CustomText(
+                    text: 'Share',
+                    fontSize: ScreenUtil().setSp(12),
+                    color: FB_DARK_PRIMARY,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                CircleAvatar(
+                  radius: 15,
+                  backgroundImage: AssetImage(currentUserProfilePic),
                 ),
                 SizedBox(
-                  height: ScreenUtil().setHeight(10),
+                  width: ScreenUtil().setWidth(10),
                 ),
-                CustomText(
-                  text: 'View comments',
-                  fontSize: ScreenUtil().setSp(12),
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(ScreenUtil().setSp(10), 0, 0, 0),
+                    alignment: Alignment.centerLeft,
+                    height: ScreenUtil().setHeight(25),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(ScreenUtil().setSp(10)),
+                      ),
+                    ),
+                    child: CustomText(
+                      text: 'Write a comment...',
+                      fontSize: ScreenUtil().setSp(11),
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: ScreenUtil().setHeight(10),
+            ),
+            CustomText(
+              text: 'View comments',
+              fontSize: ScreenUtil().setSp(12),
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
           ],
         ),
       ),

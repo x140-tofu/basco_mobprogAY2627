@@ -23,3 +23,13 @@ During this laboratory, I have learned to create an interface with images like F
 
 Reflection:
 - I am sorry for submitting beyond the deadline despite the opportunity of it as the deadline was moved. However, there were a lot of errors with transferring devices that I did not account to. I did not do it ahead of time because I anticipated there could be problems when transferring and decided to use the computers in our laboratory but not this worse :<. I will be responsible for my late submission. Also, I have learned to use my laptop instead onwards to lessen further problems.
+
+Laboratory 2: Discussion
+-
+
+For this laboratory activity, I really enjoyed modifying the UI of the app. I did not encounter a lot of problems, but I did encounter some errors that I, finally, understood.
+- The Profile button error: I encountered an error with the Profile button because every time I click it, a few clicks later, it will show a red screen error. I have now understood that putting a value on the _onTappedBar, which is the (value==2), makes it understand that it will be accepting only 2 pages: NewsFeedScreen() and NotificationScreen(), under the PageView.
+- Limited Pixels on Notification Screen: It said that I had a limit on what notification page will show. It is showing an error regarding the child: const Column(. To fix it, I used a ListView instead and made the children const that allowed it to have no overflow errors since Column forces it to fit in while ListView makes it scrollable.
+
+Reflection:
+- I have learned a lot with displays which I will continue to remember.

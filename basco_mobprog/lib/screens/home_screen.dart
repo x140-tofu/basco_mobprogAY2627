@@ -4,7 +4,6 @@ import '../constants.dart';
 import '../screens/newsfeed_screen.dart';
 import '../widgets/custom_text.dart';
 import '../screens/notification_screen.dart';
-import '../screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<String> _appBarTitles = [
     'TeyvatGram',
     'Notifications',
-    'Profile',
   ];
 
   @override
@@ -41,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
         children: const <Widget>[
           NewsFeedScreen(),
           NotificationScreen(),
-          ProfileScreen(),
         ],
         onPageChanged: (page) {
           setState(() {
@@ -71,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _onTappedBar(int value) {
+    if (value == 2) return;
     setState(() {
       _selectedIndex = value;
     });

@@ -39,7 +39,7 @@ class Notification extends StatelessWidget {
                 fontWeight: FontWeight.w800,
               ),
               CustomText(
-                text: 'Posted: $post',
+                text: '$post',
                 fontSize: ScreenUtil().setSp(13),
                 color: Colors.black,
               ),

@@ -4,6 +4,7 @@ import '../constants.dart';
 import '../screens/newsfeed_screen.dart';
 import '../widgets/custom_text.dart';
 import '../screens/notification_screen.dart';
+import '../screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,6 +17,12 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   final PageController _pageController = PageController();
 
+  final List<String> _appBarTitles = [
+    'TeyvatGram',
+    'Notifications',
+    'Profile',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
         shadowColor: FB_TEXT_COLOR_WHITE,
         elevation: 2,
         title: CustomText(
-          text: 'facebook',
+          text: _appBarTitles[_selectedIndex],
           fontSize: ScreenUtil().setSp(25),
           color: FB_PRIMARY,
           fontFamily: 'Klavika',
@@ -34,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: const <Widget>[
           NewsFeedScreen(),
           NotificationScreen(),
+          ProfileScreen(),
         ],
         onPageChanged: (page) {
           setState(() {
@@ -50,6 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
             label: 'Notifications',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ],
         selectedItemColor: FB_PRIMARY,

@@ -6,26 +6,53 @@ class NewsFeedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        NewsFeedCard(
-          userName: 'Xiao',
-          postContent: 'i am not the xiao in xiao lantern...',
-          numOfLikes: 1000,
-          date: 'November 19, 2026',
-          profilePic: 'assets/images/xiao.jpg',
-          currentUserProfilePic: 'assets/images/userProfile.jpg',
-        ),
-        NewsFeedCard(
-          userName: 'Arataki Itto',
-          postContent: 'Me to Kujo Sara',
-          numOfLikes: 200,
-          hasImage: true,
-          date: 'November 20, 2026',
-          profilePic: 'assets/images/itto.jpg',
-          currentUserProfilePic: 'assets/images/userProfile.jpg',
-        ),
-      ],
+    const String activeUserPfp = 'assets/images/userProfile.jpg';
+
+    final List> posts = [
+      {
+        'userName': 'Xiao',
+        'postContent': 'i am not the xiao in xiao lantern...',
+        'numOfLikes': 1000,
+        'date': 'November 19, 2026',
+        'profilePic': 'assets/images/xiao.jpg',
+        'hasImage': false,
+        'postImage': null,
+      },
+      {
+        'userName': 'Arataki Itto',
+        'postContent': 'Me to Kujo Sara',
+        'numOfLikes': 200,
+        'date': 'November 20, 2026',
+        'profilePic': 'assets/images/itto.jpg',
+        'hasImage': true,
+        'postImage': 'assets/images/catmeme.png',
+      },
+      {
+        'userName': 'Zhongli',
+        'postContent': 'Missing my son, Xiao :(',
+        'numOfLikes': 450,
+        'date': 'November 27, 2026',
+        'profilePic': 'assets/images/userProfile.jpg',
+        'hasImage': false,
+        'postImage': null,
+      },
+    ];
+
+    return ListView.builder(
+      itemCount: posts.length,
+      itemBuilder: (context, index) {
+        final post = posts[index];
+        return NewsFeedCard(
+          userName: post['userName'],
+          postContent: post['postContent'],
+          numOfLikes: post['numOfLikes'],
+          date: post['date'],
+          profilePic: post['profilePic'],
+          hasImage: post['hasImage'],
+          postImage: post['postImage'],
+          currentUserProfilePic: activeUserPfp,
+        );
+      },
     );
   }
 }

@@ -18,7 +18,7 @@ class BascoFacebook extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Facebook Replication',
+          title: 'TeyvatGram',
           initialRoute: '/home',
           routes: {
             '/newsfeed': (context) => const NewsFeedScreen(),

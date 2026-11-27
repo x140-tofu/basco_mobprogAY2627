@@ -9,6 +9,7 @@ class NewsFeedCard extends StatelessWidget {
   final String date;
   final int numOfLikes;
   final bool hasImage;
+  final String? postImage;
   final String profilePic;
   final String currentUserProfilePic;
 
@@ -18,6 +19,7 @@ class NewsFeedCard extends StatelessWidget {
     required this.postContent,
     this.numOfLikes = 0,
     this.hasImage = false,
+    this.postImage,
     required this.date,
     required this.profilePic,
     required this.currentUserProfilePic,
@@ -85,7 +87,7 @@ class NewsFeedCard extends StatelessWidget {
             SizedBox(height: ScreenUtil().setHeight(5)),
             if (hasImage)
               Image.asset(
-                'assets/images/catmeme.png',
+                postImage ?? 'assets/images/catmeme.png',
                 width: double.infinity,
                 height: ScreenUtil().setHeight(300),
                 fit: BoxFit.cover,
